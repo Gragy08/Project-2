@@ -1,0 +1,173 @@
+extends layouts/default.pug
+include mixins/product-item.pug
+
+block title 
+    title Trang chủ
+
+block main
+        //- Section-1
+        section.section1
+            .container
+                .section1__wrap
+                    img(class="header__bg1" src="assets/images/header-bg1.svg" alt="0")
+
+                    .section1__content
+
+                        img(class="section1__bg1" src="assets/images/section1-bg1.svg" alt="")
+
+                        h1.section1__title
+                            .section1__title-main Thêm một bạn
+                            .section1__title-sub Thêm ngàn niềm vui!
+
+                        .section1__desc
+                            p Có một con thú cưng đồng nghĩa với việc bạn có thêm niềm
+                            p vui mới. Chúng tôi có hơn 200 con thú cưng khác nhau có thể
+                            p đáp ứng nhu cầu của bạn!
+
+                        .section1__buttons
+                            a(href="#" class="button-outline")
+                                | Giới thiệu 
+                                i(class="fa-regular fa-circle-play")
+                            a(href="#" class="button") Khám phá ngay
+
+                        img(class="section1__bg2" src="assets/images/section1-bg2.svg" alt="")
+
+                    .section1__image
+                        img(class="section1__bg3" src="assets/images/section1-bg3.svg")
+                        img(class="section1__image-main" src="assets/images/image1.png" alt="")
+        //- End Section-1
+
+        //- Section-2
+
+        -
+            var pets = [
+            {
+                image: 'assets/images/MO231.png',
+                title: 'MO231 - Pomeranian Parti',
+                gender: 'Đực',
+                age: '02 tháng',
+                price: '6.900.000 VND'
+            },
+            {
+                image: 'assets/images/MO502.png',
+                title: 'MO502 - Poodle Tiny Vàng',
+                gender: 'Cái',
+                age: '02 tháng',
+                price: '3.900.000 VND'
+            },
+            {
+                image: 'assets/images/MO102.png',
+                title: 'MO102 - Poodle Tiny Sepia',
+                gender: 'Đực',
+                age: '02 tháng',
+                price: '4.000.000 VND'
+            },
+            {
+                image: 'assets/images/MO512.png',
+                title: 'MO512 - Alaskan Malamute',
+                gender: 'Đực',
+                age: '03 tháng',
+                price: '8.900.000 VND'
+            },
+            {
+                image: 'assets/images/MO231_Corgi.png',
+                title: 'MO231 - Pembroke Corgi',
+                gender: 'Đực',
+                age: '02 tháng',
+                price: '7.900.000 VND'
+            },
+            {
+                image: 'assets/images/MO502_Corgi.png',
+                title: 'MO502 - Pembroke Corgi',
+                gender: 'Cái',
+                age: '02 tháng',
+                price: '9.000.000 VND'
+            },
+            {
+                image: 'assets/images/MO231_Pom-Parti.png',
+                title: 'MO231 - Pomeranian Parti',
+                gender: 'Cái',
+                age: '02 tháng',
+                price: '6.500.000 VND'
+            },
+            {
+                image: 'assets/images/MO512_Poodle.png',
+                title: 'MO512 - Poodle Tiny',
+                gender: 'Đực',
+                age: '02 tháng',
+                price: '5.000.000 VND'
+            }
+            ];
+
+        section.section2
+            .container
+                .box-head
+                    .box-head__left
+                        p Có gì mới?
+                        h3 một số vật nuôi của chúng tôi
+                    .box-head__right
+                        a(class="button-outline" href="#") 
+                            | Xem thêm 
+                            i(class="fa-solid fa-angle-right")
+
+                .section2__wrap 
+                    each pet in pets
+                        +product-item(pet)
+                .section2__button-bottom
+                    a(class="button-outline" href="#") 
+                        | Xem thêm 
+                        i(class="fa-solid fa-angle-right")
+        //- End Section-2
+
+        //- Section-3 
+        include partials/section-3.pug 
+        //- End Section-3 
+
+        //- Secion-4
+
+        -
+            var know = [
+            {
+                image: 'assets/images/image 4-1.jpg',
+                tag: 'Kiến thức thú cưng',
+                title: 'Pomeranian là gì? Cách nhận biết chó Pomeranian',
+                desc: 'Pomeranian hay còn gọi là chó Pomeranian (chó Pom) luôn nằm trong top những thú cưng dễ thương nhất. Không chỉ vậy, giống chó xiếc nhỏ nhắn, đáng yêu, thông minh, thân thiện và khéo léo.'
+            },
+            {
+                image: 'assets/images/image 4-2.jpg',
+                tag: 'Kiến thức thú cưng',
+                title: 'Chế độ ăn cho chó bạn cần biết',
+                desc: 'Việc chia khẩu phần ăn cho chó thoạt nghe có vẻ đơn giản nhưng có một số quy tắc bạn nên biết để chó cưng dễ dàng hấp thụ các chất dinh dưỡng trong khẩu phần ăn. Dành cho những người mới bắt đầu nuôi chó, đặc biệt là chó con mới sinh có sức đề kháng tương đối yếu.'
+            },
+            {
+                image: 'assets/images/image 4-3.jpg',
+                tag: 'Kiến thức thú cưng',
+                title: 'Tại sao chó cắn phá đồ đạc và cách phòng ngừa hiệu quả',
+                desc: 'Chó cắn là hiện tượng phổ biến trong quá trình phát triển. Tuy nhiên, không ai muốn thấy đồ đạc, vật dụng quan trọng của mình bị chó cắn.'
+            }
+            ]; 
+
+        section.section4
+            .container
+                .box-head
+                    .box-head__left
+                        p Có thể bạn đã biết?
+                        h3 kiến thức thú cưng hữu ích
+                    .box-head__right
+                        a(class="button-outline" href="#")
+                            | Xem thêm 
+                            i(class="fa-solid fa-angle-right")
+                .section4__wrap
+                    each element in know 
+                        .elements
+                            a(href="#")
+                                .elements__image
+                                    img(src=element.image  alt=element.title)
+                                .elements__content
+                                    .elements__content--tag #{element.tag} 
+                                    h3.elements__content--title #{element.title}
+                                    p.elements__content--desc #{element.desc}
+                    a(class="button-outline" href="#")
+                        | Xem thêm 
+                        i(class="fa-solid fa-angle-right")
+        //- End Secion-4
