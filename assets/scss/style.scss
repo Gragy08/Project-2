@@ -596,6 +596,10 @@ a {
     
     &__content {
         padding: 8px 8px 20px 8px;
+
+        h3 {
+            color: $color-main;
+        }
     }
     
     &__title {

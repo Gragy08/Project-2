@@ -510,6 +510,9 @@ a {
 .product-item__content {
   padding: 8px 8px 20px 8px;
 }
+.product-item__content h3 {
+  color: #002A48;
+}
 .product-item__title {
   margin-top: 0;
   font-weight: 700;
